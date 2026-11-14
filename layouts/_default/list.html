@@ -1,0 +1,7 @@
+{{ define "main" }}
+<article class="page"><h1>{{ .Title }}</h1>{{ .Content }}
+<div class="projects">{{ range .Pages }}
+  <article class="project"><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Params.summary }}</p>
+  {{ with .Params.tags }}<div class="tags">{{ delimit . ", " }}</div>{{ end }}</article>
+{{ end }}</div></article>
+{{ end }}

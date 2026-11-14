@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Params.name }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  {{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site"><div class="wrap">
+    <a class="brand" href="{{ "/" | relURL }}">{{ site.Params.name }}</a>
+    <nav aria-label="Main">
+      <a href="{{ "/#about" | relURL }}">About</a>
+      <a href="{{ "/#experience" | relURL }}">Experience</a>
+      <a href="{{ "/projects/" | relURL }}">Projects</a>
+      <a href="{{ "/#contact" | relURL }}">Contact</a>
+    </nav>
+  </div></header>
+  <main id="main" class="wrap">{{ block "main" . }}{{ end }}</main>
+  <footer class="site"><div class="wrap">
+    &copy; {{ now.Year }} {{ site.Params.name }}. No secrets were committed in the making of this site. A scanner checks on every push.
+  </div></footer>
+</body>
+</html>
