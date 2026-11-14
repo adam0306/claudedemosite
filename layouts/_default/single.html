@@ -1,0 +1,7 @@
+{{ define "main" }}
+<article class="page"><h1>{{ .Title }}</h1>
+{{ with .Params.tags }}<div class="tags">{{ delimit . ", " }}</div>{{ end }}
+{{ .Content }}
+{{ with .Params.repo }}<p><a href="{{ . }}" rel="noopener">Source</a></p>{{ end }}
+<p><a href="{{ "/projects/" | relURL }}">Back to projects</a></p></article>
+{{ end }}

@@ -1,0 +1,43 @@
+baseURL = "https://example.com/"   # TODO: your real URL (GitHub Pages: https://<user>.github.io/claudedemosite/)
+languageCode = "en-us"
+title = "[Your Name] | Identity & Secrets"
+enableRobotsTXT = true
+
+[params]
+  name = "[Your Name]"
+  role = "IAM engineer, secrets management"
+  description = "Placeholder portfolio for an identity and secrets management engineer."
+  tagline = "I make sure the right people hold the right access to the right things for the right reasons. Mostly. Sometimes it's just me rotating a key at 2 a.m."
+  about = "I work on identity and access management, with a soft spot for secrets management: vaults, leases, short-lived credentials, and the quiet joy of a rotation that nobody noticed. [Replace with two or three honest sentences about your background.]"
+  email = "you@example.com"
+  linkedin = "https://www.linkedin.com/in/your-handle"
+  github = "https://github.com/your-handle"
+
+  [[params.skills]]
+    group = "Identity"
+    items = "SSO (SAML, OIDC), SCIM provisioning, RBAC and ABAC, PAM, MFA and passkeys"
+  [[params.skills]]
+    group = "Secrets"
+    items = "Vault-style secret engines, dynamic credentials, KMS and HSM, rotation automation"
+  [[params.skills]]
+    group = "Delivery"
+    items = "Terraform, Kubernetes workload identity, CI/CD hardening, audit logging"
+
+  [[params.experience]]
+    years = "20XX to present"
+    title = "Senior IAM Engineer"
+    org = "[Company Name]"
+    note = "Replaced long-lived credentials with short-lived ones. Nobody threw a party, which means it worked."
+  [[params.experience]]
+    years = "20XX to 20XX"
+    title = "Security Engineer"
+    org = "[Company Name]"
+    note = "Built the access review process people complained about and then quietly relied on."
+  [[params.experience]]
+    years = "20XX to 20XX"
+    title = "Systems Administrator"
+    org = "[Company Name]"
+    note = "Learned why shared admin accounts are a bad idea, the hard way."
+
+[minify]
+  minifyOutput = true
